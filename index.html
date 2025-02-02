@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <title>
+            SYNCHRONIZED digital Studio
+        </title>
+        <style>
+            .wheel-container {
+           
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: rotateWheel 5s linear infinite;
+        }
+
+        @keyframes rotateWheel {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .spike {
+            position: absolute;
+            width: 0.1px;
+            height: 115px;
+            background-color: white;
+        }
+
+        .center-dot {
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            background-color: white;
+            border-radius: 50%;
+        }
+        p{
+            color:white;
+            text-align: right;
+            font-size: 200px;
+        }
+        h5{
+            color:white;
+            
+        }
+        /* Fullscreen black background */
+        #loading-screen {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            color: white;
+            font-size: 3rem;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Loading number */
+        #loading-number {
+            position: absolute;
+            left: 0;
+            white-space: nowrap;
+            transition: left 0.05s linear;
+        }
+        </style>
+        
+    </head >
+    <body style="background-color: black;">
+        <!-- Loading Screen -->
+    <div id="loading-screen">
+        <span id="loading-number">1%</span>
+    </div>
+
+    <script>
+        let number = 1;
+        let loadingText = document.getElementById("loading-number");
+        let loadingScreen = document.getElementById("loading-screen");
+
+        let duration = 5000; // 5 seconds total loading time
+        let interval = duration / 100; // 50ms per update
+
+        let startTime = Date.now();
+        let centerX = window.innerWidth / 2; // Center position
+
+        function updateLoading() {
+            let elapsed = Date.now() - startTime;
+            let progress = Math.min(elapsed / duration, 1); // Stops at 1 (100%)
+
+            number = Math.floor(progress * 100);
+            loadingText.innerText = number + "%";
+
+            // Move text from left (0px) to center (centerX)
+            loadingText.style.left = (progress * centerX) + "px";
+
+            if (progress < 1) {
+                requestAnimationFrame(updateLoading);
+            } else {
+                setTimeout(() => {
+                    loadingScreen.style.display = "none"; // Hide loading screen
+                    document.getElementById("content").style.display = "block"; // Show main content
+                }, 500); // Small delay for smooth transition
+            }
+        }
+
+        requestAnimationFrame(updateLoading); // Start animation
+    </script>
+        <marquee direction="right" scrollamount="20" ><span style="font-family: Georgia;"><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;">  SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span style="font-family: Georgia;"><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;">  SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span style="font-family: Georgia;"><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;">  SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span><span ><a href="https://SYNCHRONIZED.studio/?archive=true" style="color: palegoldenrod; text-decoration: none;"> SYNCHRONIZED</a></span><span style="color: white;"> ARCHIVE </span></marquee>
+        <img style="height: 125px; width: 125px; transform: translate(23%, 2%);" src="https://SYNCHRONIZED.studio/logo-full.svg">
+        <h5 style="transform: translate(92%, -110%);">ABOUT <br>
+        WORK<br>
+        RECOGNITION<br>
+        CONTACT US<br><br><br>
+        ARCHIVE</h5>
+        <h5 style="transform: translate(45%, 110%)"><span style="color:palegoldenrod">SYNCHRONIZED</span> IS<br>
+            A FULL-SERVICE CREATIVE<br>
+            STUDIO CRAFTING<br>
+            UNPARALLED DIGITAL<br>
+            EXPERIENCES.
+        <br>
+        <h5 style="color:grey;transform: translate(45%, 110%);">We provide our partners with<br>
+            exceptional digital solutions that<br>
+            brings strategic value and make<br>
+            their bbusinesses thrive.<br>
+        </h5>
+        <div style="transform: translate(920px, 6px);">
+        <div class="wheel-container" >
+            <div class="center-dot"></div>
+            <script>
+                const wheel = document.querySelector(".wheel-container");
+                for (let i = 0; i < 360; i += 10) {
+                    const spike = document.createElement("div");
+                    spike.classList.add("spike");
+                    spike.style.transform = `rotate(${i}deg) translateY(-60px)`;
+                    wheel.appendChild(spike);
+                }
+            </script>
+        </div>
+        </div>
+        <p style=" transform: translate(-5%, -320%);">Synchronized        </p>
+        <p style=" transform: translate(-57%, -420%)">Digital</p>
+        <p style=" transform: translate(-18%, -525%)">Creative        </p>
+        <p style=" transform: translate(-18%, -630%)">Studio        </p>
+
+    </body>
+
+</html>
